@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Bot</title>
+    <link rel="icon" href="{{ url_for('static', filename='game-console.ico') }}" type="image/x-icon">
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Дополнительные стили -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Светлый фон */
+        }
+        .navbar {
+            background: linear-gradient(to right, #343a40, #464e54); /* Тёмный градиент шапки */
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #e2e2e2 !important;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .section-title {
+            margin: 40px 0 20px;
+            font-weight: bold;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель (navbar) -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/dashboard">Habit Bot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+            <span class="navbar-toggler-icon" style="color: #fff;"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <!-- Левая часть меню -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/statistics">Статистика</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://t.me/HabitTrackerBot" target="_blank">Чат-бот</a>
+                </li>
+            </ul>
+            <!-- Правая часть меню -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="navbar-text mr-3">Добро пожаловать, {{ username }}!</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Выйти</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контейнер -->
+    <div class="container mt-5 mb-5">
+        <h3 class="text-center section-title">ГЛАВНАЯ</h3>
+
+        <!-- Раздел "ВАЖНАЯ ИНФОРМАЦИЯ" -->
+        <h3 class="text-center section-title">ВАЖНАЯ ИНФОРМАЦИЯ</h3>
+
+        <div class="row">
+            <!-- Первая карточка -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Следите за привычками!</h5>
+                        <p class="card-text">Habit Bot предоставляет простой и удобный способ для пользователей отслеживать свои привычки, а администраторам — мониторить взаимодействие и эффективность бота.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Вторая карточка -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">База данных</h5>
+                        <p class="card-text">При диалоге с ботом ваши сообщения и настройки записываются в отдельную базу данных, обеспечивая безопасность и удобство доступа.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Третья карточка -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Блок в разработке...</h5>
+                        <p class="card-text">Скоро здесь будет интересная информация и новые функции для улучшения вашего опыта!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение jQuery и Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Подвал сайта (footer) -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>© 2024 Habit Bot. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
